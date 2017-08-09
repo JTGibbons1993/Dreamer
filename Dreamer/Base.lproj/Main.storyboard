@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n71-4j-QDw">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,7 +19,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vzt-Vf-Mck"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8RK-Mu-iwC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5LV-Es-Btn">
@@ -34,7 +34,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ey-QG-O9A">
-                                <rect key="frame" x="16" y="132" width="288" height="348"/>
+                                <rect key="frame" x="16" y="132" width="288" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -156,7 +156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="izo-oq-hXs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gIa-QN-bvs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat_face_glasses_thick_65455_1920x1080" translatesAutoresizingMaskIntoConstraints="NO" id="zpu-uQ-Sap">
@@ -206,13 +206,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEj-gc-rTH">
-                                <rect key="frame" x="0.0" y="196" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="284" width="320" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="ujs-Dv-Um5"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT1-UF-Z2X">
-                                <rect key="frame" x="16" y="420" width="288" height="40"/>
+                                <rect key="frame" x="16" y="508" width="288" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OlA-yi-JSb"/>
@@ -223,7 +223,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC8-ay-Fzz">
-                                <rect key="frame" x="16" y="167" width="288" height="21"/>
+                                <rect key="frame" x="16" y="255" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZOQ-BY-Kq5"/>
                                 </constraints>
@@ -264,6 +264,12 @@
                             <color key="tintColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="uf7-C8-8Sc" id="Wrg-do-ywN"/>
+                        <outlet property="priceField" destination="q2F-Gy-lNk" id="2pl-3s-Iyz"/>
+                        <outlet property="storePicker" destination="wEj-gc-rTH" id="6EK-zX-A2S"/>
+                        <outlet property="titleView" destination="YQu-ey-7HW" id="3rV-C6-pgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDu-AQ-0Bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
