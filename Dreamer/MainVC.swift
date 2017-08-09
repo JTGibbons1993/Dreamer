@@ -21,6 +21,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+       // generateTestData()
+        attemptFetch()
+    }
+//row height
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,6 +43,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
         return 0
     }
+// Cell return
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         configureCell(cell: cell, indexPath: indexPath) // indexPath as NSIndexPath
@@ -44,7 +51,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     //Update cell for the above tableView function
     func configureCell(cell: ItemCell, indexPath: IndexPath) {
-        //update cell
+        let item = controller.object(at: indexPath)
+        cell.configureCell(item: item)
     }
     
     func attemptFetch() {
@@ -54,6 +62,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         fetchRequest.sortDescriptors = [dateSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = controller //if this is not done, the controller passed would just be a shell
         
         do {
             try controller.performFetch()
@@ -87,7 +96,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case.update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
-                //update cell data code here...
+                configureCell(cell: cell, indexPath: indexPath)
             }
             break
         case.move:
@@ -100,5 +109,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             break
         }
     }
+    
+    func generateTestData() {
+        let item = Item(context: context)
+        item.title = "Macbook Pro"
+        item.price = 2000
+        item.details = "It's really shiny!"
+        
+        let item2 = Item(context: context)
+        item2.title = "PizzaBox"
+        item2.price = 2
+        item2.details = "It's really not shiny!"
+        
+        let item3 = Item(context: context)
+        item3.title = "Tesla Model S"
+        item3.price = 2000000
+        item3.details = "It's really shiny!"
+        
+        //save data
+        ad.saveContext()
+    }
+    
+    
 }
 

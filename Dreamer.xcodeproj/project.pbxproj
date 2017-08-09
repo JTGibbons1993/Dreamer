@@ -23,6 +23,8 @@
 		CEA1991B1F3A2C78002B60C5 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA199131F3A2C78002B60C5 /* Image+CoreDataProperties.swift */; };
 		CEA199201F3A36F8002B60C5 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1991F1F3A36F8002B60C5 /* ItemCell.swift */; };
 		CEA199221F3A3726002B60C5 /* MaterialKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA199211F3A3726002B60C5 /* MaterialKey.swift */; };
+		CEA199261F3A86F3002B60C5 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA199251F3A86F3002B60C5 /* ItemDetailsVC.swift */; };
+		CEA199281F3A8D2B002B60C5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA199271F3A8D2B002B60C5 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		CEA199131F3A2C78002B60C5 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CEA1991F1F3A36F8002B60C5 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		CEA199211F3A3726002B60C5 /* MaterialKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialKey.swift; sourceTree = "<group>"; };
+		CEA199251F3A86F3002B60C5 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		CEA199271F3A8D2B002B60C5 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +80,12 @@
 		CEA198F61F3A2591002B60C5 /* Dreamer */ = {
 			isa = PBXGroup;
 			children = (
+				CEA198F71F3A2591002B60C5 /* AppDelegate.swift */,
 				CEA1991E1F3A36D9002B60C5 /* View */,
 				CEA1991C1F3A2C87002B60C5 /* Model */,
-				CEA198F71F3A2591002B60C5 /* AppDelegate.swift */,
-				CEA198F91F3A2591002B60C5 /* MainVC.swift */,
+				CEA199241F3A863C002B60C5 /* Controller */,
 				CEA198FB1F3A2591002B60C5 /* Main.storyboard */,
-				CEA199011F3A2591002B60C5 /* Assets.xcassets */,
-				CEA199031F3A2591002B60C5 /* LaunchScreen.storyboard */,
-				CEA199061F3A2591002B60C5 /* Info.plist */,
-				CEA198FE1F3A2591002B60C5 /* Dreamer.xcdatamodeld */,
+				CEA199231F3A5E78002B60C5 /* Resources */,
 			);
 			path = Dreamer;
 			sourceTree = "<group>";
@@ -117,8 +118,29 @@
 			children = (
 				CEA199211F3A3726002B60C5 /* MaterialKey.swift */,
 				CEA1991F1F3A36F8002B60C5 /* ItemCell.swift */,
+				CEA199271F3A8D2B002B60C5 /* CustomTextField.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		CEA199231F3A5E78002B60C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEA199011F3A2591002B60C5 /* Assets.xcassets */,
+				CEA199031F3A2591002B60C5 /* LaunchScreen.storyboard */,
+				CEA199061F3A2591002B60C5 /* Info.plist */,
+				CEA198FE1F3A2591002B60C5 /* Dreamer.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CEA199241F3A863C002B60C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEA198F91F3A2591002B60C5 /* MainVC.swift */,
+				CEA199251F3A86F3002B60C5 /* ItemDetailsVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,11 +223,13 @@
 				CEA199141F3A2C78002B60C5 /* Store+CoreDataClass.swift in Sources */,
 				CEA199001F3A2591002B60C5 /* Dreamer.xcdatamodeld in Sources */,
 				CEA199191F3A2C78002B60C5 /* Item+CoreDataProperties.swift in Sources */,
+				CEA199261F3A86F3002B60C5 /* ItemDetailsVC.swift in Sources */,
 				CEA199181F3A2C78002B60C5 /* Item+CoreDataClass.swift in Sources */,
 				CEA199201F3A36F8002B60C5 /* ItemCell.swift in Sources */,
 				CEA198F81F3A2591002B60C5 /* AppDelegate.swift in Sources */,
 				CEA1991A1F3A2C78002B60C5 /* Image+CoreDataClass.swift in Sources */,
 				CEA1991B1F3A2C78002B60C5 /* Image+CoreDataProperties.swift in Sources */,
+				CEA199281F3A8D2B002B60C5 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
