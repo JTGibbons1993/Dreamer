@@ -54,6 +54,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let item = controller.object(at: indexPath)
         cell.configureCell(item: item)
     }
+//get object ready to be send to be edited in DetailsVC
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let objects = controller.fetchedObjects, objects.count > 0 { //Where objects.count > 0
+            let item = objects[indexPath.row]
+            performSegue(withIdentifier: "ItemDetailsVC", sender: item)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ItemDetailsVC" {
+            if let destination = segue.destination as? ItemDetailsVC {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item //passes item into VC to be edited
+                }
+            }
+        }
+    }
     
     func attemptFetch() {
         
@@ -61,7 +77,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
         
+        
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        controller.delegate = self //need this so functions know what to listen to
         self.controller = controller //if this is not done, the controller passed would just be a shell
         
         do {
